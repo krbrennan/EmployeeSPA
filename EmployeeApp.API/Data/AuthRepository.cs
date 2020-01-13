@@ -7,6 +7,8 @@ namespace EmployeeApp.API.Data
 {
     public class AuthRepository : IAuthRepository
     // is responsible for querying database using entity framework
+    // This class extends the IAuthRepository that I created. IAuthRepository contains the basic structure of site functionality, namely, 
+    //      Registering an account, Logging in an account, and checking to see if a specified user exits
     {
         private readonly DataContext _context;
 
