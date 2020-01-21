@@ -4,20 +4,23 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+  <div class="nav-div collapse navbar-collapse" id="navbarSupportedContent">
+    <ul *ngIf="loggedIn()" class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" [routerLink]="['/home']" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class='nav-link' [routerLink]="['/employees']" routerLinkActive='router-link-active'>Crayons</a>
+        <a class='nav-link' [routerLink]="['/employees']" routerLinkActive='active'>Crayons</a>
+      </li>
+      <li class="nav-item active">
+        <a class='nav-link' [routerLink]="['/lists']" routerLinkActive='active'>Lists</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Messages</a>
+        <a class="nav-link" [routerLink]="['/messages']" href="#">Messages</a>
       </li>
     </ul>
 
-    <div *ngIf="loggedIn()" class="dropdown" data-toggle="dropdown">
+    <div *ngIf="loggedIn()" class="dropdown welcome-dropdown" data-toggle="dropdown">
       <a class="dropdown-toggle text-light">
         Welcome
       </a>
@@ -30,7 +33,7 @@
 
 
 
-    <form *ngIf="!loggedIn()" #loginForm="ngForm" class="form-inline my-2 my-lg-0" (ngSubmit)="login()">
+    <form *ngIf="!loggedIn()" #loginForm="ngForm" class="loginBox justify-content-md-end form-inline my-2 my-lg-0" (ngSubmit)="login()">
       <input class="form-control mr-sm-2" required type="text" name="username" placeholder="Username" [(ngModel)]="model.username">
       <input class="form-control mr-sm-2" required type="password" name="password" placeholder="Password" [(ngModel)]="model.password">
       <button [disabled]="!loginForm.valid" class="btn btn-success my-2 my-sm-0" type="submit" name="submit">Login</button>

@@ -17,3 +17,7 @@
 .dropdown-item > i {
     padding-right: 1em;
 }
+
+.nav-div {
+    justify-content: flex-end;
+}
