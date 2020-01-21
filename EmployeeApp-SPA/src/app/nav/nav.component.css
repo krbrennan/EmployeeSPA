@@ -1,0 +1,19 @@
+/* navbar css */
+
+.nav-link:hover{
+    background: rgb(27, 184, 106);
+    opacity: 40%; 
+}
+.dropdown {
+    margin-right: 2em;
+    padding: .5em;
+}
+.dropdown:hover {
+    cursor: pointer;
+    background: rgb(27, 184, 106);
+    opacity: 80%;
+    font-color: white;
+}
+.dropdown-item > i {
+    padding-right: 1em;
+}
