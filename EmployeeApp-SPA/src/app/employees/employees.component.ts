@@ -8,22 +8,22 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class EmployeesComponent implements OnInit {
-  [x: string]: any;
+  // [x: string]: any;
 
   values: any = [];
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.getValues();
+    this.getEmployees();
   }
 
 
-  getValues(){
+  getEmployees(){
     this.http.get('http://localhost:5000/api/values/')
     .subscribe(response => {
     this.values = response;
   }, error => {
-    console.log('getValues error!!! \n');
+    console.log('getUsers error!!! \n');
     console.log(error);
   });
   }
