@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using EmployeeApp.API.Dtos;
 using EmployeeApp.API.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -31,12 +32,19 @@ namespace EmployeeApp.API.Data
         public async Task<IEnumerable<User>> GetUsers()
         {
             var users = await _context.Users.Include(p => p.Photos).ToListAsync();
+            // var users = await _context.Users.ToListAsync();
+
             return users;
         }
 
         public async Task<bool> SaveAll()
         {
             return await _context.SaveChangesAsync() > 0;
+        }
+
+        public void UpdateUser<T>(T userEntity) where T: class
+        {
+            _context.SaveChanges();
         }
     }
 }

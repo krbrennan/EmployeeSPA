@@ -2,8 +2,22 @@
   Crayons
 </h2>
 
-<ul>
-  <li *ngFor="let user of values">
-    {{ user.username }}
-  </li>
-</ul>
+<div class='crayon-container'>
+  <ul class='crayon-ul'>
+    <div class='card' *ngFor="let user of values">
+      <img *ngIf="user.photos[0]" class='card-img-top crayon-img' src="{{ user.photos[0].url }}" alt="Image Missing!">
+      <img *ngIf="!user.photos[0]" class='card-img-top crayon-img' src="assets/broken-1.jpg" alt="Image Missing!">
+
+
+      <hr class='card-hr'>
+      <div class='card-body'>
+        <h5 class='card-title'>{{ user.username | uppercase }}</h5>
+        <div class='card-known-as'>
+          <p>Known As:</p><p class='card-known-as-name'> {{ user.knownAs ? user.knownAs : "N/A" }}</p>
+        </div>
+          <p class='user-introduction'>{{ user.introduction }}</p>
+      </div>
+    </div>
+  </ul>
+</div>
+

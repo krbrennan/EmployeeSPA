@@ -14,6 +14,8 @@ import { EmployeesComponent } from './employees/employees.component';
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { appRoutes } from './routes';
+import { EditComponent } from './edit/edit.component';
+import { UsersService } from './_services/users.service';
 
 @NgModule({
    declarations: [
@@ -23,7 +25,8 @@ import { appRoutes } from './routes';
       RegisterComponent,
       EmployeesComponent,
       ListsComponent,
-      MessagesComponent
+      MessagesComponent,
+      EditComponent
    ],
    imports: [
       BrowserModule,
@@ -32,7 +35,8 @@ import { appRoutes } from './routes';
       RouterModule.forRoot(appRoutes)
    ],
    providers: [
-      AuthService
+      AuthService,
+      UsersService
    ],
    bootstrap: [
       AppComponent

@@ -4,6 +4,7 @@ import { EmployeesComponent } from './employees/employees.component';
 import { MessagesComponent } from './messages/messages.component';
 import { ListsComponent } from './lists/lists.component';
 import { AuthGuard } from './_guards/auth.guard';
+import { EditComponent } from './edit/edit.component';
 
 // each route is an object
 export const appRoutes: Routes = [
@@ -17,7 +18,8 @@ export const appRoutes: Routes = [
         children: [
             { path: 'employees', component: EmployeesComponent },
             { path: 'messages', component: MessagesComponent },
-            { path: 'lists', component: ListsComponent }
+            { path: 'lists', component: ListsComponent },
+            { path: 'edit', component: EditComponent }
         ]
     },
     { path: '**', redirectTo: '', pathMatch: 'full'}

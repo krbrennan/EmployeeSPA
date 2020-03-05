@@ -1,0 +1,53 @@
+.crayon-container {
+    margin: 0 auto;
+    justify-content: center;
+    display: flex;
+    max-width: 90%;
+}
+
+.crayon-ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0;
+}
+
+.card-body {
+    display: inline;
+}
+
+.card {
+    width: 22rem;
+    align-items: center;
+    padding: 1em;
+    margin: 1.5em;
+    border: 2px solid grey;
+}
+.card-hr {
+    width: 100%;
+    color: black;
+}
+
+.card-title {
+    justify-content: center;
+}
+
+.crayon-img {
+    width: 100px;
+    height: 100px
+}
+
+.crayon-li {
+    list-style: none;
+}
+
+.card-known-as {
+    display: inline-flex;
+}
+.card-known-as-name {
+    margin-left: .5em;
+}
+
+.user-introduction {
+    font-size: smaller;
+}

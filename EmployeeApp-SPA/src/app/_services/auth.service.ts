@@ -20,7 +20,7 @@ constructor(private http: HttpClient) { }
         map((response: any) => {
           // token object
           const user = response;
-          if(user){
+          if (user) {
             localStorage.setItem('token', user.token);
           }
         })

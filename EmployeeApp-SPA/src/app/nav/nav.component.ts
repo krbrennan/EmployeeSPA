@@ -19,9 +19,14 @@ export class NavComponent implements OnInit {
   ngOnInit() {
   }
 
-  login(){
+  goToEditComponent() {
+    this.router.navigateByUrl('/edit', { state: { model: this.model.username} });
+  }
+
+  login() {
     this.authService.login(this.model).subscribe(next => {
         this.alertify.success('Logged In Successfully!');
+        history.pushState({data: this.model.username}, 'user');
       }, error => {
         this.alertify.error(error.statusText);
       },
@@ -33,13 +38,12 @@ export class NavComponent implements OnInit {
   loggedIn(){
     // get token from local storage
     const token = localStorage.getItem('token');
-
     return !!token;
   }
 
   logout(){
     localStorage.removeItem('token');
     this.alertify.success('Logged Out Successfully!');
-    this.router.navigate(['/home'])
+    this.router.navigate(['/home']);
   }
 }

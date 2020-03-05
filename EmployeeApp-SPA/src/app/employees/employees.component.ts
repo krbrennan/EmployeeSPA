@@ -8,10 +8,12 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class EmployeesComponent implements OnInit {
+  constructor(private http: HttpClient) { }
   // [x: string]: any;
 
   values: any = [];
-  constructor(private http: HttpClient) { }
+
+ 
 
   ngOnInit() {
     this.getEmployees();
@@ -19,7 +21,7 @@ export class EmployeesComponent implements OnInit {
 
 
   getEmployees(){
-    this.http.get('http://localhost:5000/api/values/')
+    this.http.get('http://localhost:5000/api/users/')
     .subscribe(response => {
     this.values = response;
   }, error => {
