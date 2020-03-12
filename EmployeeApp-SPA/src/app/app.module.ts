@@ -6,7 +6,6 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
-import { FormsModule } from '@angular/forms'
 import { AuthService } from './_services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
@@ -16,6 +15,9 @@ import { MessagesComponent } from './messages/messages.component';
 import { appRoutes } from './routes';
 import { EditComponent } from './edit/edit.component';
 import { UsersService } from './_services/users.service';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
    declarations: [
@@ -32,6 +34,7 @@ import { UsersService } from './_services/users.service';
       BrowserModule,
       HttpClientModule,
       FormsModule,
+      ReactiveFormsModule,
       RouterModule.forRoot(appRoutes)
    ],
    providers: [

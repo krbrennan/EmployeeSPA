@@ -1,37 +1,29 @@
-<form class='edit-profile-form' #registerForm="ngForm" (ngSubmit)='updateUserInfo'>
-  <h2>Edit Your Profile</h2>
-
+<div class="div-form">
   <div>
-    <h3 class='capitalize'>Hey {{ usernameModel }}!</h3>
+    <h3 class='capitalize'>Hey {{ currentUserName }}!</h3>
+  </div>
+    
+  <div [formGroup]="myForm"><p class='edit-descriptor'>City:</p>
+    <input formControlName="city" type='text' class='form-control' name='City' required>
+  </div>
+  <div [formGroup]="myForm"><p class='edit-descriptor'>Country:</p>
+    <input formControlName="country" type='text' class='form-control' name='Country' required>
+  </div>
+  <div [formGroup]="myForm"><p class='edit-descriptor'>Gender:</p>
+    <input formControlName="gender" type='text' class='form-control' name='Gender' required>
+  </div>
+  <div [formGroup]="myForm"><p class='edit-descriptor'>Interests:</p>
+    <textarea formControlName="interests" rows="5" cols="1" class='form-control' name='Interests' required></textarea>
+  </div>
+  <div [formGroup]="myForm"><p class='edit-descriptor'>Introduction:</p>
+    <textarea formControlName="introduction" type='textarea' class='form-control' name='Introduction' required></textarea>
+  </div>
+  <div [formGroup]="myForm"><p class='edit-descriptor'>Known As:</p>
+    <input formControlName="knownAs" type='text' class='form-control' name='Known As' required>
   </div>
 
-  <div class='form-group'>
-    <input type='text' class='form-control' name='City' required [(ngModel)]='userPutModel.city'  placeholder='City'>
+  <div class='btn-group text-center'>
+    <button class='button btn btn-success btn-block' (click)='submitForm()' type='submit'>Submit Changes</button>
+    <button class='button btn btn-danger btn-block' (click)='cancel()' type='button'>Cancel</button>
   </div>
-
-  <div class='form-group'>
-    <input type='text' class='form-control' name='Country' required [(ngModel)]='userPutModel.country'  placeholder='Country'>
-  </div>
-
-  <div class='form-group'>
-    <input type='text' class='form-control' name='Gender' required [(ngModel)]='userPutModel.gender'  placeholder='Gender'>
-  </div>
-
-  <div class='form-group'>
-    <textarea type='text-field' class='form-control' name='Introduction' required [(ngModel)]='userPutModel.introduction'  placeholder='Introduction'></textarea>
-  </div>
-
-  <div class='form-group'>
-    <textarea type='text' class='form-control' name='Interests' required [(ngModel)]='userPutModel.interests'  placeholder='Interests'></textarea>
-  </div>
-
-  <div class='form-group'>
-    <input type='text' class='form-control' name='KnownAs' required [(ngModel)]='userPutModel.knownAs'  placeholder='Known As'>
-  </div>
-
-  <div class='form-group text-center'>
-    <button class='btn btn-success btn-block' (click)='submitForm()' type='submit'>Submit Changes</button>
-    <button class='btn btn-danger btn-block' (click)='cancel()' type='button'>Cancel</button>
-  </div>
-
-</form>
+</div>

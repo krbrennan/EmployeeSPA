@@ -1,15 +1,46 @@
-
 .capitalize {
     text-transform: capitalize;
 }
 
-.edit-profile-form {
-    max-width: 75%;
+.edit-descriptor {
+    font-weight: bold;
+    padding-top: 1em;
+    text-decoration: underline black;
+}
+
+.div-form {
+    width: 60%;
+    padding: 3em;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+input[type="text"]{
+    width: 500px;
+}
+
+input[type="textarea"]{
+    /* width: 500px;
+    height: 200px; */
+    overflow-wrap:normal;
+    width: 500px;
+}
+
+textarea {
+    overflow-wrap: normal;
+    width: 500px;
+}
+
+.form-control {
+    wrap: hard;
+}
+
+.btn-group {
+    display: contents;
     margin: 0 auto;
 }
 
-.form-group {
-    max-width: 50%;
-    margin: 0 auto;
-    padding: 1em;
+.button {
+    width: 500px;
+    margin-top: 1em;
 }
